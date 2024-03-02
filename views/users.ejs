@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <!--Tabelas-->
+    <style>
+        #top {
+          margin-left: 90%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table class="table table-hover">
+            <div class="grad">
+                <h2>Usuários</h2> 
+                <a href="/register"><button id="top" type="button"class="btn btn-primary">Novo usuário</button></a>
+            </div>
+            <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Data de Nascimento</th>
+                  <th>Sexo</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 0; i < users.length; i++){ %>
+                <tr>
+                    <td><%=i+1%></td>
+                    <td><%=users[i].nome%></td>
+                    <td><%=users[i].email%></td>
+                    <td><%=users[i].dataNasc%></td>
+                    <td><%=users[i].sexo%></td>
+                    <td><a href="#"><button type="button"class="btn btn-primary">Atualizar</button></a> </td>
+                    <td><a href="/delete/<%=users[i].email%>"><button type="button" class="btn btn-danger">Deletar</button></a></td>
+                </tr>
+                <%}%>
+            </tbody>
+    </div>
+</body>
+</html>
