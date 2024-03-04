@@ -1,7 +1,6 @@
 // Importar as dependências
 const express = require('express');
 const app = express();
-const { redirect } = require('express/lib/response')
 const bodyParser = require('body-parser');
 
 // Configura o motor de visualização EJS
