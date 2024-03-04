@@ -134,7 +134,7 @@ app.post('/register', (req, res) => {
     }
 
     // Verifica se a renda mensal é um número, e, e se após os separadores há dígitos
-    const regexRenda = /^(?:\d{1,3}(?:\.\d{3})*(?:,\d{2})|\d+(?:,\d{2})?)$/;
+    const regexRenda = /^\d{1,3}(?:\.\d{3})*(,\d{2})$/;
     if (!regexRenda.test(rendaMensal)) {
         mensagem.renda = "Renda mensal inválida!";
         return res.redirect('/register');
